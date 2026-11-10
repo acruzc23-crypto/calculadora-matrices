@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pizarra de Matrices</title>
+  <meta name="description" content="Determinante, inversa, sistemas de ecuaciones, producto y rango de matrices, explicados paso a paso con fracciones exactas.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23264d40'/><path d='M9 7H6v18h3M23 7h3v18h-3' fill='none' stroke='%23f4ecd8' stroke-width='2.5'/><circle cx='12' cy='12' r='2' fill='%23f4d35e'/><circle cx='20' cy='20' r='2' fill='%23f28fad'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="pizarra">
+    <header>
+      <h1>Pizarra de Matrices</h1>
+      <p class="bajada">Escribe tu matriz y mira cada operación de fila, con fracciones exactas, como en clase.</p>
+    </header>
+
+    <nav class="operaciones" aria-label="Operación">
+      <button type="button" data-op="determinante" aria-pressed="true">Determinante</button>
+      <button type="button" data-op="inversa" aria-pressed="false">Inversa</button>
+      <button type="button" data-op="sistema" aria-pressed="false">Sistema de ecuaciones</button>
+      <button type="button" data-op="producto" aria-pressed="false">Producto A·B</button>
+      <button type="button" data-op="rango" aria-pressed="false">Rango</button>
+      <button type="button" data-op="transpuesta" aria-pressed="false">Transpuesta</button>
+    </nav>
+
+    <form class="entrada" id="entrada" autocomplete="off">
+      <div class="matrices" id="matrices"></div>
+      <div class="botones">
+        <button type="submit" class="resolver">Resolver</button>
+        <button type="button" class="tiza" id="ejemplo">Ejemplo</button>
+        <button type="button" class="tiza" id="limpiar">Limpiar</button>
+      </div>
+      <p class="ayuda">Acepta enteros, decimales y fracciones: <code>3</code>, <code>-0.5</code>, <code>2/3</code>. Las celdas vacías cuentan como 0.</p>
+      <p class="error" id="error" role="alert" hidden></p>
+    </form>
+
+    <section class="solucion" id="solucion" aria-live="polite" hidden>
+      <div class="respuesta" id="respuesta"></div>
+      <ol class="pasos" id="pasos"></ol>
+    </section>
+  </div>
+
+  <footer class="pie">
+    Hecho por <a href="https://github.com/acruzc23-crypto">Alfredo Cruz</a> para practicar Álgebra Lineal, UNEMI.
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
